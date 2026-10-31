@@ -1,0 +1,10 @@
+<a class="carte" href="{{ .RelPermalink }}">
+  <div class="carte-tete">
+    <h3>{{ .Title }}</h3>
+    {{ partial "statut.html" .Params.statut }}
+  </div>
+  <p>{{ .Params.resume }}</p>
+  {{ with .Params.competences }}
+  <ul class="tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  {{ end }}
+</a>

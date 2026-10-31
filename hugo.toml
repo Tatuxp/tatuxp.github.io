@@ -1,0 +1,32 @@
+baseURL = "https://projets.sunkipa.ovh/"
+languageCode = "fr-FR"
+defaultContentLanguage = "fr"
+title = "Ludovic Pedron — Projets"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  auteur = "Ludovic Pedron"
+  sousTitre = "Infrastructure · Virtualisation · Sécurité · Automatisation"
+  description = "Projets d'infrastructure et suivi de mon homelab : PKI interne, reverse proxy, sauvegardes, documentation, automatisation."
+  email = "lpedron@sunkipa.ovh"
+  linkedin = "https://www.linkedin.com/in/ludovic-pedron-a24239153"
+  github = "https://github.com/Tatuxp"
+
+[menus]
+  [[menus.main]]
+    name = "Accueil"
+    pageRef = "/"
+    weight = 1
+  [[menus.main]]
+    name = "Projets"
+    pageRef = "/projets"
+    weight = 2
+  [[menus.main]]
+    name = "Feuille de route"
+    pageRef = "/feuille-de-route"
+    weight = 3
+
+[markup.goldmark.renderer]
+  unsafe = false
+

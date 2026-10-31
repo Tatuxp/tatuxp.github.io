@@ -1,0 +1,7 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="prose">{{ .Content }}</div>
+<div class="grille">
+  {{ range .Pages.ByWeight }}{{ partial "carte.html" . }}{{ end }}
+</div>
+{{ end }}

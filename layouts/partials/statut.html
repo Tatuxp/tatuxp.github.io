@@ -1,0 +1,4 @@
+{{- $s := . | default "En cours" -}}
+{{- $cls := "encours" -}}
+{{- if eq $s "Terminé" }}{{ $cls = "termine" }}{{ else if eq $s "Prévu" }}{{ $cls = "prevu" }}{{ end -}}
+<span class="statut {{ $cls }}">{{ $s }}</span>

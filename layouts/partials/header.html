@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ "/" | relURL }}">{{ site.Params.auteur }}</a>
+    <nav>
+      {{ $current := . }}
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}" {{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) (eq $current.RelPermalink .URL) }}class="actif"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article>
+  {{ if eq .Section "projets" }}<p class="fil"><a href="{{ "/projets/" | relURL }}">← Tous les projets</a></p>{{ end }}
+  <header class="article-tete">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.statut }}{{ partial "statut.html" . }}{{ end }}
+  </header>
+  {{ with .Params.resume }}<p class="chapo">{{ . }}</p>{{ end }}
+  {{ with .Params.competences }}<ul class="tags">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+  <div class="prose">{{ .Content }}</div>
+  {{ if not .Lastmod.IsZero }}<p class="maj">Mis à jour le {{ .Lastmod | time.Format "2 January 2006" }}</p>{{ end }}
+</article>
+{{ end }}
